@@ -302,7 +302,8 @@ flexdog <- function(refvec,
 #' Antonio Augusto Franco Garcia, and Matthew Stephens. 2018.
 #' "Harnessing Empirical Bayes and Mendelian Segregation
 #' for Genotyping Autopolyploids from Messy Sequencing Data."
-#' \emph{bioRxiv}. Cold Spring Harbor Laboratory. doi:10.1101/281550.
+#' \emph{bioRxiv}. Cold Spring Harbor Laboratory.
+#' doi:10.1101/281550.
 #'
 #' @examples
 #' ## A natural population. We will assume a

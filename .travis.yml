@@ -6,9 +6,10 @@ sudo: false
 warnings_are_errors: true
 cache: packages
 
-bioc_packages: 
+bioc_packages:
   - BiocInstaller
   - BiocCheck
+  - VariantAnnotation
 
 addons:
   apt:

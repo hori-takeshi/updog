@@ -27,7 +27,9 @@ Imports: Rcpp (>= 0.12.16),
     doParallel,
     ggplot2,
     ggthemes,
-    stringr
+    stringr,
+    VariantAnnotation,
+    S4Vectors
 Suggests: covr,
     testthat,
     SuppDists,
