@@ -1,4 +1,4 @@
-################
+################0;136;0c
 ## Multiple SNP genotyping
 ################
 
@@ -255,7 +255,7 @@ multidog <- function(refmat,
   if (nc == 1) {
     foreach::registerDoSEQ()
   } else {
-    cl = parallel::makeCluster(nc)
+    cl = parallel::makeCluster(nc, outfile="")
     doParallel::registerDoParallel(cl = cl)
     if (foreach::getDoParWorkers() == 1) {
       stop("multidog: nc > 1 but only one core registered from foreach::getDoParWorkers().")
@@ -265,7 +265,7 @@ multidog <- function(refmat,
   ## Fit flexdog on all SNP's --------------------------------------------------
   i <- 1
   outlist <- foreach::foreach(i = seq_along(snplist),
-                              .export = c("flexdog")) %dopar% {
+                              .export = c("flexdog"), .verbose=TRUE) %dopar% {
                                 current_snp <- snplist[[i]]
 
                                 refvec <- refmat[current_snp, indlist, drop = TRUE]
@@ -287,6 +287,7 @@ multidog <- function(refmat,
                                   p2_size <- NULL
                                 }
 
+			        cat(paste0("\nprocessing ", i, "..."))
                                 fout <- flexdog(refvec    = refvec,
                                                 sizevec   = sizevec,
                                                 ploidy    = ploidy,
